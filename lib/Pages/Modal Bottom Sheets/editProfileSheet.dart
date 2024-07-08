@@ -52,7 +52,7 @@ final theme = Theme.of(context);
               margin: EdgeInsets.symmetric(horizontal: 24.0),
               padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 24.0),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Theme.of(context).primaryColorDark,
                 borderRadius: BorderRadius.circular(50.0),
               ),
               child: Row(

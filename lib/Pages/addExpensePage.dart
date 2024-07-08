@@ -144,7 +144,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
                 Container(
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.circular(50.0),
                   ),
                   child: ExpansionTile(
@@ -152,12 +152,12 @@ class _AddExpensePageState extends State<AddExpensePage> {
                       chosenIcon == -1
                           ? Icons.adjust_rounded
                           : ListOfIcons.listOfIcons[chosenIcon],
-                      color: Colors.black,
+                      color: Theme.of(context).secondaryHeaderColor,
                     ),
                     title: Text(
                       "Choose an Icon",
                       style: TextStyle(
-                        color: Colors.black,
+                        color: Theme.of(context).secondaryHeaderColor,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -165,7 +165,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
                       iconsExpanded
                           ? Icons.keyboard_arrow_up_sharp
                           : Icons.keyboard_arrow_down_sharp,
-                      color: Colors.black,
+                      color: Theme.of(context).secondaryHeaderColor,
                     ),
                     onExpansionChanged: (expansionState) {
                       iconsExpanded = expansionState;
@@ -184,7 +184,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
                             vertical: 10.0, horizontal: 0.0),
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color:Theme.of(context).primaryColor,
                           //border: Border.all(color: Colors.black),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
@@ -205,7 +205,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
                                   ListOfIcons.listOfIcons[index],
                                   color: index == chosenIcon
                                       ? Colors.deepOrangeAccent
-                                      : Colors.black,
+                                      : Theme.of(context).secondaryHeaderColor,
                                 ),
                                 onPressed: () {
                                   chosenIcon = index;
@@ -225,7 +225,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
                   padding:
                       EdgeInsets.symmetric(vertical: 4.0, horizontal: 24.0),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Theme.of(context).primaryColorDark,
                     borderRadius: BorderRadius.circular(50.0),
                   ),
                   child: Row(
@@ -256,7 +256,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
                   padding:
                       EdgeInsets.symmetric(vertical: 4.0, horizontal: 24.0),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Theme.of(context).primaryColorDark,
                     borderRadius: BorderRadius.circular(50.0),
                   ),
                   child: Row(
@@ -288,7 +288,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
                   padding:
                       EdgeInsets.symmetric(vertical: 4.0, horizontal: 24.0),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color:Theme.of(context).primaryColorDark,
                     borderRadius: BorderRadius.circular(50.0),
                   ),
                   child: Row(

@@ -55,7 +55,7 @@ Future<dynamic> addBudgetModalBottomSheet(BuildContext context) {
               margin: EdgeInsets.symmetric(horizontal: 80.0),
               padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 24.0),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Theme.of(context).primaryColorDark,
                 borderRadius: BorderRadius.circular(50.0),
               ),
               child: Row(
@@ -94,7 +94,7 @@ Future<dynamic> addBudgetModalBottomSheet(BuildContext context) {
               margin: EdgeInsets.symmetric(horizontal: 70.0),
               padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 24.0),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Theme.of(context).primaryColorDark,
                 borderRadius: BorderRadius.circular(50.0),
               ),
               child: Row(
