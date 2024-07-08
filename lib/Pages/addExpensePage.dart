@@ -94,7 +94,8 @@ class _AddExpensePageState extends State<AddExpensePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
+      body: SingleChildScrollView(
+      child: Column(
         children: [
           // Back Button
           Column(
@@ -368,6 +369,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
           ),
         ],
       ),
+      ),
       floatingActionButton: FloatingActionButton(
         //backgroundColor: Color(0xee12fff7),
         child: Icon(
@@ -388,4 +390,5 @@ class _AddExpensePageState extends State<AddExpensePage> {
       ),
     );
   }
+
 }

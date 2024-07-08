@@ -124,7 +124,7 @@ class _MainState extends State<Main> {
               ),
               fontFamily: "Abel",
               primaryColor: Colors.white,
-              primaryColorDark: Colors.grey[900],
+              primaryColorDark: Colors.grey[200],
               secondaryHeaderColor: Color(0xff1a1a1a),
               scaffoldBackgroundColor: Color(0xffeeeeee),
               textTheme: TextTheme(
