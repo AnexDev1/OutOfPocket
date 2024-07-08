@@ -82,6 +82,7 @@ class _MainState extends State<Main> {
               fontFamily: "Abel",
 
               primaryColor: Color(0xff1a1a1a),
+              secondaryHeaderColor: Colors.white,
               scaffoldBackgroundColor: Colors.grey[900],
               textTheme: TextTheme(
                 bodyLarge: TextStyle(
@@ -122,6 +123,7 @@ class _MainState extends State<Main> {
               ),
               fontFamily: "Abel",
               primaryColor: Colors.white,
+              secondaryHeaderColor: Color(0xff1a1a1a),
               scaffoldBackgroundColor: Color(0xffeeeeee),
               textTheme: TextTheme(
                 bodyLarge: TextStyle(

@@ -317,10 +317,12 @@ class _AddExpensePageState extends State<AddExpensePage> {
                 // Pick a date
                 GestureDetector(
                   child: Container(
+
                     width: double.infinity,
                     padding:
                         EdgeInsets.symmetric(vertical: 14.0, horizontal: 24.0),
                     decoration: BoxDecoration(
+
                       /*gradient: LinearGradient(
                         colors: [
                           Color(0xffb3ffab),
@@ -329,14 +331,14 @@ class _AddExpensePageState extends State<AddExpensePage> {
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),*/
-                      color: Colors.grey[900],
+                      color: Colors.black,
                       borderRadius: BorderRadius.circular(50.0),
                     ),
                     alignment: Alignment.center,
                     child: Text(
                       pickADateTitle,
                       style: TextStyle(
-                        color: Colors.white,
+                        color:Colors.white,
                         fontSize: 16.0,
                         fontWeight: FontWeight.bold,
                       ),

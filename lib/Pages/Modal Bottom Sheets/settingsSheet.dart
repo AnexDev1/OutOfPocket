@@ -32,7 +32,7 @@ Future<dynamic> settingsModalBottomSheet(BuildContext context) async {
           return Container(
           height:
           650.0,
-          color: theme.primaryColor,
+          color: Theme.of(context).primaryColor,
           child: Column(
           children: [
           // Back Button

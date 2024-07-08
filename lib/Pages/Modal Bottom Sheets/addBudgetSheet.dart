@@ -21,7 +21,7 @@ Future<dynamic> addBudgetModalBottomSheet(BuildContext context) {
     builder: (context) {
       return Container(
         height: 700.0,
-        color: Colors.grey[200],
+        color: Theme.of(context).primaryColor,
         child: Column(
           children: [
             // Back Button
@@ -136,7 +136,7 @@ Future<dynamic> addBudgetModalBottomSheet(BuildContext context) {
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),*/
-                  color: Colors.grey[900],
+                  color: Colors.black,
                   borderRadius: BorderRadius.circular(50.0),
                 ),
                 alignment: Alignment.center,

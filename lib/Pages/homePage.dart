@@ -580,7 +580,7 @@ class _HomePageState extends State<HomePage> {
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),*/
-                              color: Colors.grey[900],
+                              color: Colors.black,
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Text(
