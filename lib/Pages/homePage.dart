@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
       totalExpenses += listOfExpenses[i].expense;
     }
     // Sort algo
-    late double smallestExpense;
+    // late double smallestExpense;
     List sorted = [];
     List unsorted = [];
     for (int i = 0; i < instanceList.length; i++) {
@@ -79,9 +79,9 @@ class _HomePageState extends State<HomePage> {
     }
     //
     dynamic expenseObj;
-    int goal = unsorted.length;
-    int curGoal = 0;
-    int removeIndex = 0;
+    // int goal = unsorted.length;
+    // int curGoal = 0;
+    // int removeIndex = 0;
     /*
     if (isSorted) {
       while (curGoal < goal) {
