@@ -511,7 +511,6 @@ class _HomePageState extends State<HomePage> {
                           hideChoice = -1;
                         }
                         hideChoice++;
-                        setState(() {});
                       },
                     ),
                     // Currency + Sort Button
@@ -573,7 +572,7 @@ class _HomePageState extends State<HomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              listOfExpenses.length > 0
+              listOfExpenses.isNotEmpty
                   // Delete All Button
                   ? areExpensesHidden
                       ? Container()
@@ -605,7 +604,9 @@ class _HomePageState extends State<HomePage> {
                           onTap: () {
                             var box = Boxes.getExpenses();
                             box.clear();
-                            setState(() {});
+                            setState(() {
+                              listOfExpenses.clear();
+                            });
                           },
                         )
                   // No expenses message
