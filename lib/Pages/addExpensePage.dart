@@ -22,21 +22,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
     "Saturday",
     "Sunday"
   ];
-  /*List days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];*/
-  /*List months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];*/
+
   List months = [
     "Jan",
     "Feb",
@@ -58,6 +44,17 @@ class _AddExpensePageState extends State<AddExpensePage> {
   TextEditingController expenseController = TextEditingController();
   TextEditingController noteController = TextEditingController();
 
+  String formatDate(DateTime date) {
+    List<String> days = ["Mon", "Tues", "Wed", "Thur", "Fri", "Sat", "Sun"];
+    List<String> months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    String day = days[date.weekday - 1];
+    String month = months[date.month - 1];
+    String formattedDate = "$day, ${date.day} - $month - ${date.year}";
+
+    return formattedDate;
+  }
+
   // Register Expense
   void registerExpense(
       String icon, String title, double expense, String note, String date) {
@@ -66,29 +63,11 @@ class _AddExpensePageState extends State<AddExpensePage> {
       ..title = title
       ..expense = expense
       ..note = note
-      ..date = date.toString();
+      ..date = formatDate(DateTime.now());
     final box = Boxes.getExpenses();
     box.add(currentExpense);
     setState(() {});
     Navigator.pushReplacementNamed(context, "homePage");
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    // Set initial date incase user doesn't specify date
-    int currentWeekday = DateTime.now().weekday;
-    int currentDay = DateTime.now().day;
-    int currentMonth = DateTime.now().month;
-    int currentYear = DateTime.now().year;
-    /*chosenDate = days[currentWeekday - 1].toString() +
-        ", " +
-        currentDay.toString() +
-        " - " +
-        months[currentMonth].toString() +
-        " - " +
-        currentYear.toString();*/
-    chosenDate = "Monday, December - 2019";
   }
 
   @override

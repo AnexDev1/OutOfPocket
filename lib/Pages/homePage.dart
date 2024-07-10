@@ -546,7 +546,17 @@ class _HomePageState extends State<HomePage> {
             shrinkWrap: true,
             itemCount: listOfExpenses.length,
             itemBuilder: (context, index) {
-              return ExpensesCard(
+              return Dismissible(key: Key(listOfExpenses[index].toString()),
+                onDismissed: (direction){
+                setState(() {
+                  var box = Boxes.getExpenses();
+                  box.deleteAt(index);
+                  listOfExpenses.removeAt(index);
+                });
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text('Expense Deleted')));
+                },
+                background: Container(color: Colors.red,),
+                child: ExpensesCard(
                 icon: ListOfIcons
                     .listOfIcons[int.parse(listOfExpenses[index].icon)],
                 title: listOfExpenses[index].title,
@@ -555,6 +565,7 @@ class _HomePageState extends State<HomePage> {
                 date: listOfExpenses[index].date,
                 index: index,
                 areExpensesHidden: areExpensesHidden,
+              ),
               );
             },
           ),
