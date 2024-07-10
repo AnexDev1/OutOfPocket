@@ -8,7 +8,6 @@ import '../../Model/expenseModel.dart';
 Future<dynamic> settingsModalBottomSheet(BuildContext context) async {
   final settingsBox = await Hive.openBox<SettingsModel>('SettingsModel');
   final currentSettings = settingsBox.get('settingsKey', defaultValue: SettingsModel());
-  final theme = Theme.of(context);
   bool isDarkMode = currentSettings?.isDarkMode ?? false;
   void resetData() async {
     var box;
