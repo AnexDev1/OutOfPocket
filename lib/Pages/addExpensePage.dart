@@ -43,7 +43,26 @@ class _AddExpensePageState extends State<AddExpensePage> {
   TextEditingController titleController = TextEditingController();
   TextEditingController expenseController = TextEditingController();
   TextEditingController noteController = TextEditingController();
-
+  void showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+backgroundColor: Theme.of(context).primaryColor,
+          title: Text("Error", style: TextStyle(color: Theme.of(context).secondaryHeaderColor),),
+          content: Text(message, style: TextStyle(color: Theme.of(context).secondaryHeaderColor),),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text("OK", style: TextStyle(color: Theme.of(context).secondaryHeaderColor),),
+            ),
+          ],
+        );
+      },
+    );
+  }
   String formatDate(DateTime date) {
     List<String> days = ["Mon", "Tues", "Wed", "Thur", "Fri", "Sat", "Sun"];
     List<String> months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -357,6 +376,10 @@ class _AddExpensePageState extends State<AddExpensePage> {
           size: 28.0,
         ),
         onPressed: () {
+          if(chosenIcon == -1){
+            showErrorDialog('please select an icon it add expense');
+            return;
+          }
           // Register Expense
           registerExpense(
             chosenIcon == -1 ? "Icons.adjust_rounded" : chosenIcon.toString(),

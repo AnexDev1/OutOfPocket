@@ -483,7 +483,7 @@ class _HomePageState extends State<HomePage> {
           ),
           SizedBox(height: 10.0),
           // Expenses Title and Currency
-          listOfExpenses.length > 0
+          listOfExpenses.isNotEmpty
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -545,7 +545,8 @@ class _HomePageState extends State<HomePage> {
             shrinkWrap: true,
             itemCount: listOfExpenses.length,
             itemBuilder: (context, index) {
-              return Dismissible(key: Key(listOfExpenses[index].toString()),
+              final expense = listOfExpenses[index];
+              return Dismissible(key: Key(expense.toString()),
                 onDismissed: (direction){
                 setState(() {
                   var box = Boxes.getExpenses();
@@ -558,10 +559,10 @@ class _HomePageState extends State<HomePage> {
                 child: ExpensesCard(
                 icon: ListOfIcons
                     .listOfIcons[int.parse(listOfExpenses[index].icon)],
-                title: listOfExpenses[index].title,
-                expense: listOfExpenses[index].expense,
-                note: listOfExpenses[index].note,
-                date: listOfExpenses[index].date,
+                title: expense.title,
+                expense: expense.expense,
+                note:expense.note,
+                date: expense.date,
                 index: index,
                 areExpensesHidden: areExpensesHidden,
               ),
@@ -572,7 +573,7 @@ class _HomePageState extends State<HomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              listOfExpenses.isNotEmpty
+              listOfExpenses.length >0
                   // Delete All Button
                   ? areExpensesHidden
                       ? Container()
