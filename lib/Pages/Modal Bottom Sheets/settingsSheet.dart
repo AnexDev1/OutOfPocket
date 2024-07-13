@@ -93,7 +93,7 @@ Future<dynamic> settingsModalBottomSheet(BuildContext context) async {
                 margin: EdgeInsets.symmetric(horizontal: 80.0),
                 padding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 24.0),
                 decoration: BoxDecoration(
-                  color: isDarkMode ? Colors.grey[900] : Colors.white,
+                  color: isDarkMode ? Colors.grey[900] : Colors.grey[200],
                   borderRadius: BorderRadius.circular(50.0),
                 ),
                 alignment: Alignment.center,
@@ -114,7 +114,8 @@ Future<dynamic> settingsModalBottomSheet(BuildContext context) async {
           margin: EdgeInsets.symmetric(horizontal: 80.0),
           padding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 24.0),
           decoration: BoxDecoration(
-          color: Colors.white,
+            color: isDarkMode ? Colors.grey[900] : Colors.grey[200],
+
           borderRadius: BorderRadius.circular(50.0),
           ),
           child: Row(
